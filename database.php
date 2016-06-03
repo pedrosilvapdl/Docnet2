@@ -1,5 +1,9 @@
  <?php   
  //database.php  
+
+     /*
+             This is a database connection.
+     */
  class Databases{  
       public $con;  
       public function __construct()  
@@ -10,6 +14,12 @@
                 echo 'Database Connection Error ' . mysqli_connect_error($this->con);  
            }  
       }  
+
+      /*
+              This function is for data insersion on the database
+              I chose the implode version because it returns a string from the elements of an array.
+              The function is quite simple
+      */
       public function insert($table_name, $data)  
       {  
            $string = "INSERT INTO ".$table_name." (";            
@@ -24,6 +34,9 @@
                 echo mysqli_error($this->con);  
            }  
       }  
+        /*
+              This function is for data selection on the database
+      */
       public function select($table_name)  
       {  
            $array = array();  
